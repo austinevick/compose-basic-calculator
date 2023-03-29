@@ -108,7 +108,7 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+                if (num1.value.isEmpty() || num2.value.isEmpty()) {
                showToast()
                 return@OutlinedButton
                 }
@@ -125,7 +125,7 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+                if (num1.value.isEmpty() || num2.value.isEmpty()) {
                     showToast()
                     return@OutlinedButton
                 }
@@ -141,7 +141,7 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+                if (num1.value.isEmpty() || num2.value.isEmpty()) {
                     showToast()
                     return@OutlinedButton
                 }
@@ -157,7 +157,7 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+                if (num1.value.isEmpty() || num2.value.isEmpty()) {
                     showToast()
                     return@OutlinedButton
                 }
