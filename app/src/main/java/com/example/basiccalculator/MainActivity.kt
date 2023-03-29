@@ -18,7 +18,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.basiccalculator.ui.theme.BasicCalculatorTheme
@@ -58,11 +57,9 @@ fun MyApp() {
         mutableStateOf("")
     }
 
-    fun isEmpty() {
-        if (num1.value.isEmpty() || num2.value.isEmpty())
-            Toast.makeText(mContext, "Please enter a value",
+    fun showToast() {
+      Toast.makeText(mContext, "Please enter a value",
                 Toast.LENGTH_SHORT).show()
-        return
     }
 
     Column(
@@ -111,7 +108,10 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                isEmpty()
+                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+               showToast()
+                return@OutlinedButton
+                }
                 result.value = num1.value.toDouble() + num2.value.toDouble()
                 println(result.value)
             }) {
@@ -125,7 +125,10 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                isEmpty()
+                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+                    showToast()
+                    return@OutlinedButton
+                }
                 result.value = num1.value.toDouble() - num2.value.toDouble()
 
             }) {
@@ -138,7 +141,10 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                isEmpty()
+                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+                    showToast()
+                    return@OutlinedButton
+                }
                 result.value = num1.value.toDouble() * num2.value.toDouble()
 
             }) {
@@ -151,7 +157,10 @@ fun MyApp() {
                 .fillMaxWidth()
                 .height(50.dp),
             onClick = {
-                isEmpty()
+                if (num1.value.isEmpty() && num2.value.isEmpty()) {
+                    showToast()
+                    return@OutlinedButton
+                }
                 result.value = num1.value.toDouble() / num2.value.toDouble()
 
             }) {
